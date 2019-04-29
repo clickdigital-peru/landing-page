@@ -8,7 +8,7 @@ class Hero extends Component {
     constructor() {
         super();
         this.state = {
-            xP: 60
+            xP: 80
         }
     }
     componentDidMount() {
@@ -19,8 +19,11 @@ class Hero extends Component {
         window.removeEventListener('resize', this.updateWindowDimensions);
     }
     handleDrag = (e, data) => {
-        const percentage = e.screenX / window.innerWidth * 100;
-        if (percentage < 80) {
+        let percentage = (e.screenX + 17) / window.innerWidth * 100;
+        if (e.changedTouches != null) {
+            percentage = (e.changedTouches[0].clientX + 17) / window.innerWidth * 100;
+        }
+        if (percentage < 90) {
             this.setState({ xP: percentage })
             console.log(this.state)
         }
@@ -61,10 +64,13 @@ class Hero extends Component {
                             </button>
                         </div>
                     </div>
-                    <div className="control-wrapper">
+                    <div className="control-wrapper" style={{
+                        marginLeft: `calc(${this.state.xP}% - 17px)`
+                    }}>
                         <Draggable
                             axis="x"
                             onDrag={this.handleDrag}
+                            bounds="#hero"
                         >
                             <div className="control">
                                 <h6>↔</h6>
