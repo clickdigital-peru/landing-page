@@ -121,6 +121,128 @@ footer .container {
 }
 
 /* Section scoped */
+section.section#hero {
+  text-align: center;
+}
+
+section.section#hero .slider {
+  width: 100%;
+  height: auto;
+  padding: 0;
+  position: relative;
+}
+
+section.section#hero .slider .control-wrapper {
+  position: absolute;
+  width: 30px;
+  height: 78.7%;
+  top: 0;
+  margin-left: calc(60% - 17px);
+}
+
+section.section#hero .slider .control-wrapper .control {
+  z-index: 1000;
+  position: relative;
+  top: 60%;
+  width: 100%;
+  height: 30px;
+  transform: translateY(-50%);
+  background-color: var(--accent-color);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid white;
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+section.section#hero .slider .control-wrapper .control:hover {
+  opacity: 1;
+}
+
+section.section#hero .slider .control-wrapper .control h6 {
+  margin: 0;
+  font-size: 20px;
+}
+
+section.section#hero .slider > div {
+  padding-top: 56px;
+  padding-bottom: 56px;
+}
+section.section#hero .slider .right {
+  position: absolute;
+  z-index: 1;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+}
+
+section.section#hero .slider .right .container button[type="submit"] {
+  border-color: inherit;
+}
+
+section.section#hero .slider .left {
+  position: relative;
+  z-index: 2;
+  background-color: var(--accent-color);
+  color: white;
+  width: 60%;
+  overflow: hidden;
+}
+
+section.section#hero .slider .left .left-slide-wrapper {
+  width: 100vw;
+}
+
+section.section#hero .slider .container button[type="submit"] {
+  display: block;
+  user-select: none;
+  cursor: pointer;
+  background-color: transparent;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 40px;
+  padding-right: 40px;
+  border-color: white;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 25px;
+  color: inherit;
+  margin-right: auto;
+  margin-left: auto;
+}
+section.section#hero .slider .container button[type="submit"]:hover {
+  background-color: white;
+  color: #0c233a;
+}
+
+section.section#hero .slider .container .title {
+  max-width: 200px;
+  margin-right: auto;
+  margin-left: auto;
+}
+section.section#hero .slider .container .laptop {
+  width: 300px;
+  height: 200px;
+  background-image: url("assets/images/laptop.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+section.section#hero .slider .container .laptop img {
+  height: 72%;
+  width: 76%;
+  margin-top: 23px;
+  margin-left: 2px;
+  z-index: 1;
+}
+
 section.section#who-we-are {
   padding-top: 56px;
   background-color: var(--bg-color);

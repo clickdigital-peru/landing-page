@@ -8,22 +8,22 @@ class Footer extends Component {
                     <img src="https://spinmodern.com/wp-content/uploads/2015/09/google-logo-white.png" alt="Netflix logo"/>
                     <div className="row">
                         <div className="column">
-                            <a href="#">ABOUT US</a>
+                            <a href="/">ABOUT US</a>
                         </div>
                         <div className="column">
-                            <a href="#">SERVICES</a>
+                            <a href="/">SERVICES</a>
                         </div>
                         <div className="column">
-                            <a href="#">TESTIMONIALS</a>
+                            <a href="/">TESTIMONIALS</a>
                         </div>
                         <div className="column">
-                            <a href="#">TEAMS</a>
+                            <a href="/">TEAMS</a>
                         </div>
                         <div className="column">
-                            <a href="#">OUR WORKS</a>
+                            <a href="/">OUR WORKS</a>
                         </div>
                         <div className="column">
-                            <a href="#">CONTACT US</a>
+                            <a href="/">CONTACT US</a>
                         </div>
                     </div>
                     <div className="subscribe-button">
