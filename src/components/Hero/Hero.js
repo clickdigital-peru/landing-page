@@ -21,7 +21,7 @@ class Hero extends Component {
     }
 
     onPointerMove = e => {
-        const xPos = e.clientX
+        const xPos = e.type == 'pointermove' ? e.clientX : e.targetTouches[0].pageX
         const percentage = (xPos + this.state.radius) / window.innerWidth * 100
         if (this.state.dragging && percentage < this.state.maxP) {
             this.setState({
@@ -29,10 +29,10 @@ class Hero extends Component {
             })
         }
         e.stopPropagation()
-        e.preventDefault()
     }
 
     onPointerDown = e => {
+        console.log(e.button)
         if (e.button !== 0) return
         this.setState({
             dragging: true,
@@ -47,6 +47,7 @@ class Hero extends Component {
                 className="section"
                 id="hero"
                 onPointerMove={this.onPointerMove}
+                onTouchMove={this.onPointerMove}
                 onPointerUp={this.onPointerUp}
             >
                 <div className="slider">

@@ -161,6 +161,7 @@ section.section#hero .slider .control-wrapper .control {
 
 section.section#hero .slider .control-wrapper .control:hover {
   opacity: 1;
+  -webkit-tap-highlight-color: transparent;
 }
 
 section.section#hero .slider .control-wrapper .control h6 {
