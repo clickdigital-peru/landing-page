@@ -16,7 +16,7 @@ class Hero extends Component {
     }
 
     componentDidMount = _ => {
-        if(window.innerWidth >= 768){
+        if (window.innerWidth >= 768) {
             this.setState({
                 xP: 50
             })
@@ -73,7 +73,7 @@ class Hero extends Component {
                                 <div className="laptop">
                                     <img src={code} alt="software code" />
                                 </div>
-                                <button type="submit">
+                                <button type="submit" onClick={window.location.href = "#contact-us"}>
                                     Order Development
                                 </button>
                             </div>
@@ -88,7 +88,7 @@ class Hero extends Component {
                             <div className="laptop">
                                 <img src={landing} alt="landing page" />
                             </div>
-                            <button type="submit">
+                            <button type="submit" onClick={window.location.href = "#contact-us"}>
                                 Order Design
                             </button>
                         </div>

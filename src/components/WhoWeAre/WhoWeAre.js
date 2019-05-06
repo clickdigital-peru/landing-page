@@ -12,7 +12,7 @@ class WhoWeAre extends Component {
                     <div className="text-wrapper">
                         <h1>Who we Are</h1>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores corrupti sapiente molestiae minima ratione autem sit est quasi, perferendis voluptatum recusandae quia sint itaque nesciunt, cupiditate facere rem similique optio?</p>
-                        <a href="/">Contact Us</a>
+                        <a href="#contact-us">Contact Us</a>
                     </div>
                 </div>
             </section>
