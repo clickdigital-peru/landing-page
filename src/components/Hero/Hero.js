@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import Draggable from 'react-draggable';
 import code from '../../assets/images/code.png'
 import landing from '../../assets/images/landing-page.png'
 
@@ -8,29 +7,49 @@ class Hero extends Component {
     constructor() {
         super();
         this.state = {
-            xP: 80
+            xP: 80,
+            dragging: false,
+            radius: 0,
+            maxP: 95
         }
     }
-    componentDidMount() {
-        window.addEventListener('resize', this.updateWindowDimensions);
+    onMouseDown = (e) => {
+        if (e.button !== 0) return
+        this.setState({
+            dragging: true,
+            radius: e.target.offsetWidth / 2
+        })
+        e.stopPropagation()
+        e.preventDefault()
     }
 
-    componentWillUnmount() {
-        window.removeEventListener('resize', this.updateWindowDimensions);
+    onMouseUp = e => {
+        this.setState({
+            dragging: false,
+        })
+        e.stopPropagation()
+        e.preventDefault()
     }
-    handleDrag = (e, data) => {
-        let percentage = (e.screenX + 17) / window.innerWidth * 100;
-        if (e.changedTouches != null) {
-            percentage = (e.changedTouches[0].clientX + 17) / window.innerWidth * 100;
+    
+    onMouseMove = e => {
+        const xPos = e.clientX
+        const percentage = (xPos + this.state.radius) / window.innerWidth * 100
+        if (this.state.dragging && percentage < this.state.maxP) {
+            this.setState({
+                xP: percentage
+            })
         }
-        if (percentage < 90) {
-            this.setState({ xP: percentage })
-            console.log(this.state)
-        }
+        e.stopPropagation()
+        e.preventDefault()
     }
     render() {
         return (
-            <section className="section" id="hero">
+            <section
+                className="section"
+                id="hero"
+                onMouseMove={this.onMouseMove}
+                onMouseUp={this.onMouseUp}
+            >
                 <div className="slider">
                     <div className="left" style={{
                         width: `${this.state.xP}%`
@@ -67,15 +86,9 @@ class Hero extends Component {
                     <div className="control-wrapper" style={{
                         marginLeft: `calc(${this.state.xP}% - 17px)`
                     }}>
-                        <Draggable
-                            axis="x"
-                            onDrag={this.handleDrag}
-                            bounds="#hero"
-                        >
-                            <div className="control">
-                                <h6>↔</h6>
-                            </div>
-                        </Draggable>
+                        <div className="control" onMouseDown={this.onMouseDown}>
+                            <h6>↔</h6>
+                        </div>
                     </div>
                 </div>
             </section>
