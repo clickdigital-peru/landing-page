@@ -13,25 +13,14 @@ class Hero extends Component {
             maxP: 95
         }
     }
-    onMouseDown = (e) => {
-        if (e.button !== 0) return
-        this.setState({
-            dragging: true,
-            radius: e.target.offsetWidth / 2
-        })
-        e.stopPropagation()
-        e.preventDefault()
-    }
 
-    onMouseUp = e => {
+    onPointerUp = e => {
         this.setState({
             dragging: false,
         })
-        e.stopPropagation()
-        e.preventDefault()
     }
-    
-    onMouseMove = e => {
+
+    onPointerMove = e => {
         const xPos = e.clientX
         const percentage = (xPos + this.state.radius) / window.innerWidth * 100
         if (this.state.dragging && percentage < this.state.maxP) {
@@ -42,13 +31,23 @@ class Hero extends Component {
         e.stopPropagation()
         e.preventDefault()
     }
+
+    onPointerDown = e => {
+        if (e.button !== 0) return
+        this.setState({
+            dragging: true,
+            radius: e.target.offsetWidth / 2
+        })
+        e.stopPropagation()
+        e.preventDefault()
+    }
     render() {
         return (
             <section
                 className="section"
                 id="hero"
-                onMouseMove={this.onMouseMove}
-                onMouseUp={this.onMouseUp}
+                onPointerMove={this.onPointerMove}
+                onPointerUp={this.onPointerUp}
             >
                 <div className="slider">
                     <div className="left" style={{
@@ -86,7 +85,7 @@ class Hero extends Component {
                     <div className="control-wrapper" style={{
                         marginLeft: `calc(${this.state.xP}% - 17px)`
                     }}>
-                        <div className="control" onMouseDown={this.onMouseDown}>
+                        <div className="control" onPointerDown={this.onPointerDown}>
                             <h6>↔</h6>
                         </div>
                     </div>
