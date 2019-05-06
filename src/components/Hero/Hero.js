@@ -10,7 +10,16 @@ class Hero extends Component {
             xP: 80,
             dragging: false,
             radius: 0,
-            maxP: 95
+            maxP: 95,
+            minP: 5,
+        }
+    }
+
+    componentDidMount = _ => {
+        if(window.innerWidth >= 768){
+            this.setState({
+                xP: 50
+            })
         }
     }
 
@@ -23,7 +32,7 @@ class Hero extends Component {
     onPointerMove = e => {
         const xPos = e.type === 'pointermove' ? e.clientX : e.targetTouches[0].pageX
         const percentage = (xPos + this.state.radius) / window.innerWidth * 100
-        if (this.state.dragging && percentage < this.state.maxP) {
+        if (this.state.dragging && percentage < this.state.maxP && percentage > this.state.minP) {
             this.setState({
                 xP: percentage
             })

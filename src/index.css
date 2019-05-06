@@ -234,6 +234,9 @@ section.section#hero .slider .container .laptop {
   background-position: center;
   margin-bottom: 20px;
   position: relative;
+  margin-left: auto;
+  text-align: center;
+  margin-right: auto;
 }
 
 section.section#hero .slider .container .laptop img {
@@ -553,6 +556,57 @@ footer .footer-bar {
   }
 
   /* Section scoped */
+  section.section#hero .slider .container .laptop {
+    margin-top: -18%;
+    width: 280px;
+  }
+
+  section.section#hero .slider .container .laptop img {
+    margin-top: 29px;
+    height: 69%;
+  }
+  
+  section.section#hero .slider .control-wrapper .control {
+    top: 40%;
+  }
+
+  section.section#hero .slider .left .left-slide-wrapper .container {
+    text-align: right;
+  }
+
+  section.section#hero .slider .left .left-slide-wrapper .container .title {
+    margin-left: 0;
+    max-width: 35%;
+  }
+
+  section.section#hero .slider .left .left-slide-wrapper .container p {
+    max-width: 35%;
+  }
+
+  section.section#hero .slider .left .left-slide-wrapper .container button[type="submit"] {
+    margin-left: 13%;
+  }
+
+  section.section#hero .slider .right .container {
+    text-align: left;
+  }
+
+  section.section#hero .slider .right .container .title {
+    margin-right: 0;
+    max-width: 35%;
+  }
+
+  section.section#hero .slider .right .container p {
+    margin-left: auto;
+    margin-right: 0;
+    max-width: 35%;
+  }
+
+  section.section#hero .slider .right .container button[type="submit"] {
+    margin-left: auto;
+    margin-right: 17%;
+  }
+
   section.section#who-we-are {
     padding-top: 56px;
   }
