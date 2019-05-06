@@ -73,7 +73,7 @@ class Hero extends Component {
                                 <div className="laptop">
                                     <img src={code} alt="software code" />
                                 </div>
-                                <button type="submit" onClick={window.location.href = "#contact-us"}>
+                                <button type="submit" onclick="window.location.href = '#contact-us'">
                                     Order Development
                                 </button>
                             </div>
@@ -88,7 +88,7 @@ class Hero extends Component {
                             <div className="laptop">
                                 <img src={landing} alt="landing page" />
                             </div>
-                            <button type="submit" onClick={window.location.href = "#contact-us"}>
+                            <button type="submit" onclick="window.location.href = '#contact-us'">
                                 Order Design
                             </button>
                         </div>
